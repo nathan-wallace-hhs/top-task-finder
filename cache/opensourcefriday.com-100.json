@@ -1,0 +1,119 @@
+{
+  "requestId": "cache-1772550956555-7533",
+  "selectedUrls": [
+    "https://opensourcefriday.com/",
+    "https://opensourcefriday.com/ar/",
+    "https://opensourcefriday.com/bg/",
+    "https://opensourcefriday.com/bn/",
+    "https://opensourcefriday.com/businesses/",
+    "https://opensourcefriday.com/de/",
+    "https://opensourcefriday.com/es/",
+    "https://opensourcefriday.com/fa/",
+    "https://opensourcefriday.com/fr/",
+    "https://opensourcefriday.com/hi/",
+    "https://opensourcefriday.com/index/",
+    "https://opensourcefriday.com/it/",
+    "https://opensourcefriday.com/ja/",
+    "https://opensourcefriday.com/ko/",
+    "https://opensourcefriday.com/maintainers/",
+    "https://opensourcefriday.com/pl/",
+    "https://opensourcefriday.com/pt/",
+    "https://opensourcefriday.com/ru/",
+    "https://opensourcefriday.com/tr/",
+    "https://opensourcefriday.com/uk/",
+    "https://opensourcefriday.com/zh/",
+    "https://opensourcefriday.com/ar/businesses/",
+    "https://opensourcefriday.com/ar/maintainers/",
+    "https://opensourcefriday.com/bg/businesses/",
+    "https://opensourcefriday.com/bg/maintainers/",
+    "https://opensourcefriday.com/bn/businesses/",
+    "https://opensourcefriday.com/bn/maintainers/",
+    "https://opensourcefriday.com/de/businesses/",
+    "https://opensourcefriday.com/de/maintainers/",
+    "https://opensourcefriday.com/es/businesses/",
+    "https://opensourcefriday.com/es/maintainers/",
+    "https://opensourcefriday.com/fa/businesses/",
+    "https://opensourcefriday.com/fa/maintainers/",
+    "https://opensourcefriday.com/fr/businesses/",
+    "https://opensourcefriday.com/fr/maintainers/",
+    "https://opensourcefriday.com/hi/businesses/",
+    "https://opensourcefriday.com/hi/maintainers/",
+    "https://opensourcefriday.com/it/businesses/",
+    "https://opensourcefriday.com/it/maintainers/",
+    "https://opensourcefriday.com/tr/businesses/",
+    "https://opensourcefriday.com/pt/maintainers/",
+    "https://opensourcefriday.com/zh/maintainers/",
+    "https://opensourcefriday.com/uk/maintainers/",
+    "https://opensourcefriday.com/uk/businesses/",
+    "https://opensourcefriday.com/ja/maintainers/",
+    "https://opensourcefriday.com/ko/businesses/",
+    "https://opensourcefriday.com/zh/businesses/",
+    "https://opensourcefriday.com/pl/maintainers/",
+    "https://opensourcefriday.com/tr/maintainers/",
+    "https://opensourcefriday.com/pl/businesses/",
+    "https://opensourcefriday.com/ru/maintainers/",
+    "https://opensourcefriday.com/ja/businesses/",
+    "https://opensourcefriday.com/ru/businesses/",
+    "https://opensourcefriday.com/ko/maintainers/",
+    "https://opensourcefriday.com/pt/businesses/"
+  ],
+  "requestedCount": 100,
+  "returnedCount": 55,
+  "randomShareCount": 0,
+  "shortfallCount": 45,
+  "priorityCoverage": {
+    "homepage": true,
+    "search": false,
+    "accessibility": false,
+    "topTask": false,
+    "contact": false,
+    "about": false,
+    "help": false,
+    "resources": false
+  },
+  "languageDistribution": {
+    "primary": 55,
+    "additional": 0
+  },
+  "totalDiscoveredPages": 55,
+  "discoverySummary": {
+    "requestId": "cache-1772550956555-7533",
+    "sourcesAttempted": [
+      "sitemap",
+      "homepage-fallback",
+      "crawl"
+    ],
+    "fallbackUsed": true,
+    "fallbackTriggerReasons": [
+      "shortfall-or-priority-gap"
+    ],
+    "cacheHit": false,
+    "cacheCleared": false,
+    "warnings": [
+      "Crawling discovered 2 additional URLs (crawled 3 pages)"
+    ],
+    "sourceCounts": {
+      "raw": {
+        "sitemap": 55,
+        "homepage-fallback": 17,
+        "crawl": 2
+      },
+      "accepted": {
+        "sitemap": 55
+      }
+    },
+    "priorityCoverage": {
+      "homepage": true,
+      "search": false,
+      "accessibility": false,
+      "topTask": false,
+      "contact": false,
+      "about": false,
+      "help": false,
+      "resources": false
+    },
+    "scoreDiagnostics": {}
+  },
+  "generatedAt": "2026-03-03T15:15:57.764Z",
+  "generatedBy": "github-action-cache"
+}

@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-03-03T03:18:40.469Z",
+  "generatedAt": "2026-03-03T15:15:57.766Z",
   "targets": [
     {
-      "fileName": "dev.mbtace.com-100.json",
-      "canonicalHost": "dev.mbtace.com",
+      "fileName": "opensourcefriday.com-100.json",
+      "canonicalHost": "opensourcefriday.com",
       "requestedCount": 100,
-      "returnedCount": 100,
-      "generatedAt": "2026-03-03T03:18:40.467Z",
+      "returnedCount": 55,
+      "generatedAt": "2026-03-03T15:15:57.764Z",
       "warnings": [
-        "No sitemap found at common locations or robots.txt"
+        "Crawling discovered 2 additional URLs (crawled 3 pages)"
       ]
     }
   ]
