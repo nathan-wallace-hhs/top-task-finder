@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-03-02T16:32:47.127Z",
+  "generatedAt": "2026-03-03T03:18:40.469Z",
   "targets": [
     {
-      "fileName": "hhs.gov-100.json",
-      "canonicalHost": "hhs.gov",
+      "fileName": "dev.mbtace.com-100.json",
+      "canonicalHost": "dev.mbtace.com",
       "requestedCount": 100,
       "returnedCount": 100,
-      "generatedAt": "2026-03-02T16:32:47.125Z",
-      "warnings": []
+      "generatedAt": "2026-03-03T03:18:40.467Z",
+      "warnings": [
+        "No sitemap found at common locations or robots.txt"
+      ]
     }
   ]
 }
