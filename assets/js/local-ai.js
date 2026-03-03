@@ -2,7 +2,8 @@
  * Local LLM Integration for Top Task Finder
  *
  * Supports:
- *  - Chrome/Firefox/Edge Prompt API (window.ai.languageModel) when available
+ *  - Chrome 2026 Built-in AI (LanguageModel global API) when available
+ *  - Chrome/Firefox/Edge legacy Prompt API (window.ai.languageModel) as fallback
  *  - Firefox AI Chatbot sidebar fallback (clipboard copy + instructions)
  *  - Edge Copilot sidebar fallback (clipboard copy + instructions)
  *
@@ -31,17 +32,136 @@ function showLocalAINotification(message) {
   document.dispatchEvent(new CustomEvent('local-ai:notify', { detail: { message } }));
 }
 
+/**
+ * Debug helper that logs the exact reason AI is unavailable so developers can
+ * quickly identify whether the issue is flags, GPU backend, incognito mode, etc.
+ */
+async function debugAI() {
+  const browser = detectBrowser();
+  const hasNewApi = 'LanguageModel' in window;
+  const hasLegacyApi = 'ai' in self && 'languageModel' in self.ai;
+
+  if (!hasNewApi && !hasLegacyApi) {
+    if (browser === 'chrome') {
+      console.warn(
+        `${LOG_PREFIX} [debugAI] No AI API found in Chrome.\n` +
+        '  Possible causes:\n' +
+        '  1. Browser flags disabled – enable chrome://flags/#prompt-api-for-gemini-nano\n' +
+        '  2. GPU Backend not ready – check chrome://gpu for WebGPU support\n' +
+        '  3. Incognito mode detected – Prompt API is disabled in private browsing\n' +
+        '  4. Model not downloaded – visit chrome://on-device-internals'
+      );
+    } else {
+      console.warn(`${LOG_PREFIX} [debugAI] No AI API found (browser: ${browser}).`);
+    }
+    return;
+  }
+
+  if (hasNewApi) {
+    try {
+      const availability = await LanguageModel.availability();
+      if (availability === 'no') {
+        console.warn(
+          `${LOG_PREFIX} [debugAI] LanguageModel.availability() = "no".\n` +
+          '  Possible causes:\n' +
+          '  1. Browser flags – check chrome://flags for LanguageModel/Prompt API flags\n' +
+          '  2. GPU Backend not ready – check chrome://gpu\n' +
+          '  3. Incognito mode – AI is disabled in private browsing\n' +
+          '  4. Enterprise policy – check if browser policy blocks AI features'
+        );
+      } else {
+        console.info(`${LOG_PREFIX} [debugAI] LanguageModel.availability() = "${availability}"`);
+      }
+    } catch (err) {
+      console.error(`${LOG_PREFIX} [debugAI] LanguageModel.availability() threw:`, err);
+    }
+  }
+}
+
+/**
+ * Check AI availability using the 2026 LanguageModel API first, then the
+ * legacy window.ai.languageModel API.
+ *
+ * Returns { available: boolean, status: string, api: 'LanguageModel'|'legacy'|'none' }
+ */
+async function initAI() {
+  // Check new 2026 LanguageModel global API first
+  if ('LanguageModel' in window) {
+    try {
+      const availability = await LanguageModel.availability();
+      console.info(`${LOG_PREFIX} LanguageModel.availability() = "${availability}"`);
+
+      switch (availability) {
+        case 'readily':
+          return { available: true, status: 'ready', api: 'LanguageModel' };
+        case 'downloadable':
+          return { available: true, status: 'downloadable', api: 'LanguageModel' };
+        case 'after-download':
+          return { available: false, status: 'after-download', api: 'LanguageModel' };
+        case 'no':
+        default:
+          return { available: false, status: 'no', api: 'LanguageModel' };
+      }
+    } catch (err) {
+      console.info(`${LOG_PREFIX} LanguageModel.availability() threw:`, err);
+    }
+  }
+
+  // Fall back to legacy window.ai.languageModel API
+  if ('ai' in self && 'languageModel' in self.ai) {
+    try {
+      const availability = await self.ai.languageModel.availability();
+      console.info(`${LOG_PREFIX} [legacy] languageModel.availability() = "${availability}"`);
+
+      if (availability === 'readily') {
+        return { available: true, status: 'ready', api: 'legacy' };
+      }
+      if (availability === 'after-download') {
+        return { available: false, status: 'after-download', api: 'legacy' };
+      }
+      return { available: false, status: availability || 'no', api: 'legacy' };
+    } catch (err) {
+      console.info(`${LOG_PREFIX} [legacy] languageModel.availability() threw:`, err);
+    }
+  }
+
+  return { available: false, status: 'none', api: 'none' };
+}
+
+/**
+ * Create an AI session using the appropriate API, specifying language and
+ * expectedUsage to silence console warnings and optimize safety checks.
+ */
+async function createAISession(api, systemPrompt) {
+  if (api === 'LanguageModel') {
+    const options = {
+      language: 'en',
+      expectedUsage: 'text-generation',
+    };
+    if (systemPrompt) options.systemPrompt = systemPrompt;
+    return await LanguageModel.create(options);
+  }
+  // Legacy window.ai.languageModel API
+  return await self.ai.languageModel.create({
+    systemPrompt:
+      systemPrompt ||
+      "You are a UX researcher specializing in Gerry McGovern's Top Tasks methodology. Clean, deduplicate, and professionally format the following task list.",
+  });
+}
+
 async function setupLocalAIIntegration() {
   const browser = detectBrowser();
   console.info(`${LOG_PREFIX} Browser detected: ${browser}`);
 
-  // Step 1 – check for window.ai
-  if (!('ai' in self)) {
-    console.info(`${LOG_PREFIX} window.ai is not present.`);
+  const aiStatus = await initAI();
+  console.info(`${LOG_PREFIX} AI init result:`, aiStatus);
+
+  // No AI API found in this browser
+  if (aiStatus.api === 'none') {
     if (browser === 'chrome') {
       console.info(
-        `${LOG_PREFIX} Chrome detected but window.ai is missing.\n` +
-        '  To enable Gemini Nano (Prompt API):\n' +
+        `${LOG_PREFIX} Chrome detected but no AI API found.\n` +
+        '  To enable Gemini Nano (LanguageModel API):\n' +
         '    1. Open chrome://flags/#prompt-api-for-gemini-nano  →  Enabled\n' +
         '    2. Open chrome://flags/#optimization-guide-on-device-model  →  Enabled BypassPerfRequirement\n' +
         '    3. Restart Chrome.\n' +
@@ -49,7 +169,7 @@ async function setupLocalAIIntegration() {
       );
     } else if (browser === 'firefox') {
       console.info(
-        `${LOG_PREFIX} Firefox detected but window.ai is missing.\n` +
+        `${LOG_PREFIX} Firefox detected but no AI API found.\n` +
         '  The Prompt API is experimental in Firefox.\n' +
         '  For Firefox Nightly: open about:config and set dom.ai.chatbot.enabled = true.\n' +
         '  Alternatively, use the Firefox AI Chatbot sidebar manually\n' +
@@ -58,7 +178,7 @@ async function setupLocalAIIntegration() {
       injectSidebarFallbackButton('firefox');
     } else if (browser === 'edge') {
       console.info(
-        `${LOG_PREFIX} Edge detected but window.ai is missing.\n` +
+        `${LOG_PREFIX} Edge detected but no AI API found.\n` +
         '  The Prompt API is not currently exposed via JavaScript in Edge.\n' +
         '  Use the Edge Copilot sidebar (Ctrl+Shift+.) to process prompts manually.'
       );
@@ -66,38 +186,22 @@ async function setupLocalAIIntegration() {
     } else {
       console.info(`${LOG_PREFIX} Unrecognised browser – Prompt API not available.`);
     }
+    await debugAI();
     return;
   }
 
-  // Step 2 – check for languageModel within window.ai
-  if (!('languageModel' in self.ai)) {
-    const available = Object.keys(self.ai).join(', ') || '(none)';
+  // API found but explicitly disabled
+  if (aiStatus.status === 'no') {
     console.info(
-      `${LOG_PREFIX} window.ai found but languageModel sub-API is missing.\n` +
-      `  Available sub-APIs on window.ai: ${available}`
+      `${LOG_PREFIX} AI is disabled (availability: "no").\n` +
+      '  Check chrome://flags for LanguageModel/Prompt API flags.'
     );
-    if (browser === 'chrome') {
-      console.info(
-        `${LOG_PREFIX} Enable chrome://flags/#prompt-api-for-gemini-nano, then restart Chrome.`
-      );
-    }
-    if (browser === 'firefox' || browser === 'edge') {
-      injectSidebarFallbackButton(browser);
-    }
+    await debugAI();
     return;
   }
 
-  // Step 3 – query model availability
-  let availability;
-  try {
-    availability = await self.ai.languageModel.availability();
-    console.info(`${LOG_PREFIX} languageModel.availability() returned: "${availability}"`);
-  } catch (err) {
-    console.info(`${LOG_PREFIX} languageModel.availability() threw an error:`, err);
-    return;
-  }
-
-  if (availability === 'after-download') {
+  // Model exists but has not been downloaded yet
+  if (aiStatus.status === 'after-download') {
     console.info(
       `${LOG_PREFIX} Model is available but not yet downloaded.\n` +
       '  Visit chrome://on-device-internals and wait for the download to complete,\n' +
@@ -106,21 +210,42 @@ async function setupLocalAIIntegration() {
     return;
   }
 
-  if (availability !== 'readily') {
-    console.info(
-      `${LOG_PREFIX} Model not ready (status: "${availability}").\n` +
-      '  Check chrome://on-device-internals for model download status.'
-    );
+  // Model can be downloaded on demand – trigger and track progress
+  if (aiStatus.status === 'downloadable') {
+    console.info(`${LOG_PREFIX} Model needs to be downloaded. Triggering download...`);
+    showLocalAINotification('Downloading AI model (4 GB+). This may take a while…');
+
+    try {
+      // Create a session solely to trigger and monitor the model download;
+      // the session is destroyed immediately after the download completes.
+      const session = await LanguageModel.create({
+        language: 'en',
+        expectedUsage: 'text-generation',
+        monitor(m) {
+          m.addEventListener('downloadprogress', (e) => {
+            if (e.total > 0) {
+              const pct = Math.round((e.loaded / e.total) * 100);
+              console.info(`${LOG_PREFIX} Model download progress: ${pct}%`);
+            }
+          });
+        },
+      });
+      session.destroy();
+      console.info(`${LOG_PREFIX} Model download complete. Injecting AI buttons.`);
+      injectLocalAIButton(aiStatus.api);
+    } catch (err) {
+      console.error(`${LOG_PREFIX} Model download failed:`, err);
+    }
     return;
   }
 
-  // All checks passed – inject the AI processing button
-  console.info(`${LOG_PREFIX} Model is ready. Injecting "Copy LLM Improved List" button.`);
-  injectLocalAIButton();
+  // Model is readily available – inject the AI processing buttons
+  console.info(`${LOG_PREFIX} Model is ready. Injecting AI buttons.`);
+  injectLocalAIButton(aiStatus.api);
 }
 
-/** Inject the on-device AI processing button next to the existing prompt button. */
-function injectLocalAIButton() {
+/** Inject the on-device AI processing button and streaming analysis section. */
+function injectLocalAIButton(api) {
   const existingBtn = document.getElementById('copy-prompt');
   if (!existingBtn) return;
 
@@ -143,11 +268,9 @@ function injectLocalAIButton() {
 
     let session;
     try {
-      session = await self.ai.languageModel.create({
-        systemPrompt:
-          "You are a UX researcher specializing in Gerry McGovern's Top Tasks methodology. Clean, deduplicate, and professionally format the following task list.",
-      });
-
+      session = await createAISession(api,
+        "You are a UX researcher specializing in Gerry McGovern's Top Tasks methodology. Clean, deduplicate, and professionally format the following task list."
+      );
       const response = await session.prompt(rawPrompt);
       await navigator.clipboard.writeText(response);
       aiBtn.textContent = '✅ Copied!';
@@ -155,9 +278,7 @@ function injectLocalAIButton() {
       console.error(`${LOG_PREFIX} Processing error:`, err);
       aiBtn.textContent = '❌ Error';
     } finally {
-      if (session) {
-        session.destroy();
-      }
+      if (session) session.destroy();
       setTimeout(() => {
         aiBtn.textContent = originalText;
         aiBtn.disabled = false;
@@ -166,6 +287,94 @@ function injectLocalAIButton() {
   });
 
   existingBtn.after(aiBtn);
+  injectStreamingAnalysisSection(api, aiBtn);
+}
+
+/**
+ * Inject the "Summarize Site Tasks with AI" button and streaming output area.
+ * Uses promptStreaming() so users see incremental progress rather than a long wait.
+ */
+function injectStreamingAnalysisSection(api, afterElement) {
+  // Streaming summary output
+  const summaryOutput = document.createElement('div');
+  summaryOutput.id = 'ai-summary-output';
+  summaryOutput.className = 'ai-summary';
+  summaryOutput.setAttribute('aria-live', 'polite');
+  summaryOutput.hidden = true;
+
+  // Status indicator
+  const statusEl = document.createElement('p');
+  statusEl.id = 'ai-status-indicator';
+  statusEl.className = 'hint';
+  statusEl.setAttribute('aria-live', 'polite');
+  statusEl.hidden = true;
+
+  // Summarize button
+  const summarizeBtn = document.createElement('button');
+  summarizeBtn.id = 'ai-summarize';
+  summarizeBtn.type = 'button';
+  summarizeBtn.textContent = 'Summarize Site Tasks with AI';
+
+  summarizeBtn.addEventListener('click', async () => {
+    const urlsTextarea = document.getElementById('url-output');
+    const urls = urlsTextarea ? urlsTextarea.value.trim() : '';
+    if (!urls) {
+      showLocalAINotification('Generate the URL list first!');
+      return;
+    }
+
+    const urlList = urls.split('\n').filter(Boolean);
+    statusEl.textContent = 'Thinking…';
+    statusEl.hidden = false;
+    summaryOutput.textContent = '';
+    summaryOutput.hidden = false;
+    summarizeBtn.disabled = true;
+
+    const prompt =
+      `Based on these URLs from a government site, identify the top 5 user tasks:\n` +
+      urlList.join('\n');
+
+    let session;
+    try {
+      session = await createAISession(api);
+
+      if (typeof session.promptStreaming === 'function') {
+        const stream = session.promptStreaming(prompt);
+        let rafId = null;
+        let latestChunk = '';
+        for await (const chunk of stream) {
+          latestChunk = chunk;
+          if (!rafId) {
+            rafId = requestAnimationFrame(() => {
+              summaryOutput.textContent = latestChunk;
+              rafId = null;
+            });
+          }
+        }
+        // Ensure the final chunk is always rendered
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+        }
+        summaryOutput.textContent = latestChunk;
+      } else {
+        // Non-streaming fallback for legacy API
+        const response = await session.prompt(prompt);
+        summaryOutput.textContent = response;
+      }
+
+      statusEl.textContent = 'Analysis complete (processed locally)';
+    } catch (err) {
+      console.error(`${LOG_PREFIX} Streaming analysis error:`, err);
+      statusEl.textContent = 'Error: check console for details';
+    } finally {
+      if (session) session.destroy();
+      summarizeBtn.disabled = false;
+    }
+  });
+
+  afterElement.after(summarizeBtn);
+  summarizeBtn.after(statusEl);
+  statusEl.after(summaryOutput);
 }
 
 /**
