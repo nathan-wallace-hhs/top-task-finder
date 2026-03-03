@@ -1,15 +1,13 @@
 {
-  "generatedAt": "2026-03-03T15:15:57.766Z",
+  "generatedAt": "2026-03-03T19:38:45.699Z",
   "targets": [
     {
-      "fileName": "opensourcefriday.com-100.json",
-      "canonicalHost": "opensourcefriday.com",
+      "fileName": "hp.com-100.json",
+      "canonicalHost": "hp.com",
       "requestedCount": 100,
-      "returnedCount": 55,
-      "generatedAt": "2026-03-03T15:15:57.764Z",
-      "warnings": [
-        "Crawling discovered 2 additional URLs (crawled 3 pages)"
-      ]
+      "returnedCount": 100,
+      "generatedAt": "2026-03-03T19:38:45.697Z",
+      "warnings": []
     }
   ]
 }
