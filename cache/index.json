@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-05T16:11:28.773Z",
+  "generatedAt": "2026-03-05T16:11:59.024Z",
   "targets": [
     {
       "fileName": "chewy.com-100.json",
       "canonicalHost": "chewy.com",
       "requestedCount": 100,
       "returnedCount": 1,
-      "generatedAt": "2026-03-05T16:11:28.771Z",
+      "generatedAt": "2026-03-05T16:11:59.022Z",
       "warnings": [
         "Sitemap traversal limit reached; skipped additional sitemap files.",
         "Homepage fallback unavailable: HTTP 429 Too Many Requests",

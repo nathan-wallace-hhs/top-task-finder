@@ -1,5 +1,5 @@
 {
-  "requestId": "cache-1772727083378-88684",
+  "requestId": "cache-1772727111994-30389",
   "selectedUrls": [
     "https://chewy.com/"
   ],
@@ -23,7 +23,7 @@
   },
   "totalDiscoveredPages": 1,
   "discoverySummary": {
-    "requestId": "cache-1772727083378-88684",
+    "requestId": "cache-1772727111994-30389",
     "sourcesAttempted": [
       "sitemap",
       "homepage-fallback",
@@ -63,6 +63,6 @@
     },
     "scoreDiagnostics": {}
   },
-  "generatedAt": "2026-03-05T16:11:28.771Z",
+  "generatedAt": "2026-03-05T16:11:59.022Z",
   "generatedBy": "github-action-cache"
 }
