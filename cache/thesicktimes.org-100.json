@@ -1,0 +1,115 @@
+{
+  "requestId": "cache-1772739053621-80388",
+  "selectedUrls": [
+    "https://thesicktimes.org/",
+    "https://thesicktimes.org/?query-48-page=15",
+    "https://thesicktimes.org/?query-48-page=16",
+    "https://thesicktimes.org/?query-48-page=2",
+    "https://thesicktimes.org/?query-48-page=26",
+    "https://thesicktimes.org/?query-48-page=3",
+    "https://thesicktimes.org/?query-48-page=31",
+    "https://thesicktimes.org/?query-51-page=2",
+    "https://thesicktimes.org/?query-51-page=21",
+    "https://thesicktimes.org/?query-51-page=3",
+    "https://thesicktimes.org/about/",
+    "https://thesicktimes.org/2026/03/04/two-new-books-help-children-understand-how-long-covid-impacts-their-family-members/",
+    "https://thesicktimes.org/resources/",
+    "https://thesicktimes.org/newsletter/",
+    "https://thesicktimes.org/transparency-policies/",
+    "https://thesicktimes.org/write-for-us-part-time-opportunities/",
+    "https://thesicktimes.org/category/arts-culture/",
+    "https://thesicktimes.org/category/commentary/",
+    "https://thesicktimes.org/category/covid-19/",
+    "https://thesicktimes.org/category/health/",
+    "https://thesicktimes.org/category/international/",
+    "https://thesicktimes.org/category/podcast/",
+    "https://thesicktimes.org/category/policy/",
+    "https://thesicktimes.org/category/science/",
+    "https://thesicktimes.org/2025/12/04/leslie-lee-iii-culture-critic-and-long-covid-advocate-dies-at-43/",
+    "https://thesicktimes.org/2025/12/09/doctors-who-refuse-to-engage-with-administrative-work-are-abandoning-their-poorest-and-sickest-patients/",
+    "https://thesicktimes.org/2025/12/15/medically-neglected-and-structurally-erased-international-network-appeals-for-me-advocate-nevra-elis/",
+    "https://thesicktimes.org/2025/12/16/hhs-hosts-event-and-announces-new-initiatives-for-lyme-disease-but-advocates-are-skeptical-about-follow-through/",
+    "https://thesicktimes.org/2026/01/08/a-history-of-post-viral-conditions-an-excerpt-from-invisible-illness/",
+    "https://thesicktimes.org/2026/01/20/the-cdc-just-sidelined-these-childhood-vaccines-heres-what-they-prevent/",
+    "https://thesicktimes.org/2026/01/27/metrodora-promised-comprehensive-treatment-but-within-two-years-it-abruptly-closed/",
+    "https://thesicktimes.org/2026/02/02/snapshots-of-the-unseen-how-we-focused-long-covid-in-a-recent-photo-exhibit/",
+    "https://thesicktimes.org/2026/02/03/long-covid-affects-millions-of-children-the-largest-pediatric-trial-so-far-launches-this-year/",
+    "https://thesicktimes.org/2026/02/03/national-covid-19-trends-february-3/",
+    "https://thesicktimes.org/2026/02/03/research-updates-february-3/",
+    "https://thesicktimes.org/2026/02/06/maryland-considers-long-covid-innovation-bill/",
+    "https://thesicktimes.org/2026/02/10/event-announcement-the-long-covid-op-ed/",
+    "https://thesicktimes.org/2026/02/24/how-to-write-an-op-ed-about-long-covid/",
+    "https://thesicktimes.org/2026/02/24/research-updates-february-24/",
+    "https://thesicktimes.org/2026/02/24/national-covid-19-trends-february-24/",
+    "https://thesicktimes.org/2026/03/03/research-updates-march-3/",
+    "https://thesicktimes.org/2026/02/25/los-angeles-recognizes-long-covid-awareness-day/",
+    "https://thesicktimes.org/2026/02/10/national-covid-19-trends-february-10/",
+    "https://thesicktimes.org/2026/03/03/national-covid-19-trends-march-3/",
+    "https://thesicktimes.org/2026/02/17/research-updates-february-17/",
+    "https://thesicktimes.org/2026/02/10/winter-olympic-athletes-are-rightfully-taking-covid-19-precautions/",
+    "https://thesicktimes.org/2026/02/24/six-years-in-mental-health-care-providers-are-still-uninformed-on-long-covid-and-its-making-the-crisis-worse/",
+    "https://thesicktimes.org/2026/02/13/invisible-illness-could-have-been-transgressive-instead-it-minimizes-long-covid/",
+    "https://thesicktimes.org/2026/02/10/research-updates-february-10/",
+    "https://thesicktimes.org/2026/02/17/national-covid-19-trends-february-17/",
+    "https://thesicktimes.org/2026/02/27/comic-reasons-to-wear-a-mask-in-2026/"
+  ],
+  "requestedCount": 100,
+  "returnedCount": 51,
+  "randomShareCount": 0,
+  "shortfallCount": 49,
+  "priorityCoverage": {
+    "homepage": true,
+    "search": false,
+    "accessibility": false,
+    "topTask": true,
+    "contact": false,
+    "about": true,
+    "help": false,
+    "resources": true
+  },
+  "languageDistribution": {
+    "primary": 51,
+    "additional": 0
+  },
+  "totalDiscoveredPages": 51,
+  "discoverySummary": {
+    "requestId": "cache-1772739053621-80388",
+    "sourcesAttempted": [
+      "sitemap",
+      "homepage-fallback",
+      "crawl"
+    ],
+    "fallbackUsed": true,
+    "fallbackTriggerReasons": [
+      "shortfall-or-priority-gap"
+    ],
+    "cacheHit": false,
+    "cacheCleared": false,
+    "warnings": [
+      "Crawling found no additional URLs after checking 1 pages"
+    ],
+    "sourceCounts": {
+      "raw": {
+        "sitemap": 0,
+        "homepage-fallback": 110,
+        "crawl": 0
+      },
+      "accepted": {
+        "homepage-fallback": 51
+      }
+    },
+    "priorityCoverage": {
+      "homepage": true,
+      "search": false,
+      "accessibility": false,
+      "topTask": true,
+      "contact": false,
+      "about": true,
+      "help": false,
+      "resources": true
+    },
+    "scoreDiagnostics": {}
+  },
+  "generatedAt": "2026-03-05T19:30:55.721Z",
+  "generatedBy": "github-action-cache"
+}
