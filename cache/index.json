@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-03-03T19:52:06.614Z",
+  "generatedAt": "2026-03-05T12:09:32.110Z",
   "targets": [
     {
-      "fileName": "edmonton.ca-100.json",
-      "canonicalHost": "edmonton.ca",
+      "fileName": "accessibilitycloud.com-100.json",
+      "canonicalHost": "accessibilitycloud.com",
       "requestedCount": 100,
-      "returnedCount": 100,
-      "generatedAt": "2026-03-03T19:52:06.612Z",
-      "warnings": []
+      "returnedCount": 89,
+      "generatedAt": "2026-03-05T12:09:32.109Z",
+      "warnings": [
+        "Crawling discovered 11 additional URLs (crawled 1 pages)"
+      ]
     }
   ]
 }
