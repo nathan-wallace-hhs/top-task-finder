@@ -1,15 +1,13 @@
 {
-  "generatedAt": "2026-03-05T15:25:05.889Z",
+  "generatedAt": "2026-03-05T15:27:07.599Z",
   "targets": [
     {
-      "fileName": "fema.gov-100.json",
-      "canonicalHost": "fema.gov",
+      "fileName": "ready.gov-100.json",
+      "canonicalHost": "ready.gov",
       "requestedCount": 100,
       "returnedCount": 100,
-      "generatedAt": "2026-03-05T15:25:05.883Z",
-      "warnings": [
-        "Sitemap traversal limit reached; skipped additional sitemap files."
-      ]
+      "generatedAt": "2026-03-05T15:27:07.597Z",
+      "warnings": []
     }
   ]
 }
