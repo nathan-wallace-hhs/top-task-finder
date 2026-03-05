@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-03-05T13:55:26.909Z",
+  "generatedAt": "2026-03-05T14:39:01.960Z",
   "targets": [
     {
-      "fileName": "webfirst.com-100.json",
-      "canonicalHost": "webfirst.com",
+      "fileName": "web.aaatraq.com-100.json",
+      "canonicalHost": "web.aaatraq.com",
       "requestedCount": 100,
-      "returnedCount": 29,
-      "generatedAt": "2026-03-05T13:55:26.908Z",
+      "returnedCount": 62,
+      "generatedAt": "2026-03-05T14:39:01.958Z",
       "warnings": [
-        "No sitemap found at common locations or robots.txt",
+        "Homepage fallback found 0 links from https://web.aaatraq.com/",
         "Crawling found no additional URLs after checking 1 pages"
       ]
     }

@@ -1,0 +1,127 @@
+{
+  "requestId": "cache-1772721540355-9263",
+  "selectedUrls": [
+    "https://web.aaatraq.com/",
+    "https://web.aaatraq.com/accessibility",
+    "https://web.aaatraq.com/accessibility-101",
+    "https://web.aaatraq.com/news/accessibility-failures-drive-users-away",
+    "https://web.aaatraq.com/news/ada-title-ii-digital-accessibility-deadline",
+    "https://web.aaatraq.com/news/city-website-accessibility-requirements",
+    "https://web.aaatraq.com/7-questions",
+    "https://web.aaatraq.com/about-us",
+    "https://web.aaatraq.com/acceptable-use-policy",
+    "https://web.aaatraq.com/add-audit-to-your-website",
+    "https://web.aaatraq.com/careers",
+    "https://web.aaatraq.com/common-hurdles",
+    "https://web.aaatraq.com/continuous-protection",
+    "https://web.aaatraq.com/cookies",
+    "https://web.aaatraq.com/costs-coverage",
+    "https://web.aaatraq.com/disclaimer",
+    "https://web.aaatraq.com/how-much-time",
+    "https://web.aaatraq.com/investors",
+    "https://web.aaatraq.com/news",
+    "https://web.aaatraq.com/privacy",
+    "https://web.aaatraq.com/rcp-screenshots",
+    "https://web.aaatraq.com/rcp-vs-diagnostic-tools",
+    "https://web.aaatraq.com/rcp-vs-manual-testing",
+    "https://web.aaatraq.com/rcp-vs-overlays",
+    "https://web.aaatraq.com/regulations",
+    "https://web.aaatraq.com/risk-audit",
+    "https://web.aaatraq.com/save-money",
+    "https://web.aaatraq.com/security",
+    "https://web.aaatraq.com/staged-deployment",
+    "https://web.aaatraq.com/system-schematic",
+    "https://web.aaatraq.com/terms",
+    "https://web.aaatraq.com/vpats-introduction",
+    "https://web.aaatraq.com/what-skills-do-we-need",
+    "https://web.aaatraq.com/whats-really-out-there",
+    "https://web.aaatraq.com/why-rcp",
+    "https://web.aaatraq.com/yes-or-no",
+    "https://web.aaatraq.com/news/ada-compliance-checklist",
+    "https://web.aaatraq.com/news/content-decay-why-websites-lose-value",
+    "https://web.aaatraq.com/news/converge-legal-update-february-2026",
+    "https://web.aaatraq.com/news/federal-government-finalizes-digital-technologies",
+    "https://web.aaatraq.com/news/grants-funding-ensuring-ada-compliance",
+    "https://web.aaatraq.com/news/lawler-correa-ada-reform",
+    "https://web.aaatraq.com/risk-score/foundation-of-control",
+    "https://web.aaatraq.com/risk-score/how-to-use",
+    "https://web.aaatraq.com/risk-score/importance-of-independence",
+    "https://web.aaatraq.com/risk-score/why-you-need-it",
+    "https://web.aaatraq.com/sectors/brokerages",
+    "https://web.aaatraq.com/sectors/carriers",
+    "https://web.aaatraq.com/sectors/corporations",
+    "https://web.aaatraq.com/sectors/federal-government",
+    "https://web.aaatraq.com/sectors/higher-education",
+    "https://web.aaatraq.com/sectors/k12",
+    "https://web.aaatraq.com/sectors/local-government",
+    "https://web.aaatraq.com/sectors/pools-captives",
+    "https://web.aaatraq.com/sectors/school-districts",
+    "https://web.aaatraq.com/sectors/smb",
+    "https://web.aaatraq.com/news/leverage-tax-credits",
+    "https://web.aaatraq.com/news/privacy-risk-illusion-of-choice",
+    "https://web.aaatraq.com/news/tackling-pdf-sprawl",
+    "https://web.aaatraq.com/sectors/sme",
+    "https://web.aaatraq.com/news/pdf-magic-time-listen-with-laura",
+    "https://web.aaatraq.com/sectors/transit-transportation"
+  ],
+  "requestedCount": 100,
+  "returnedCount": 62,
+  "randomShareCount": 0,
+  "shortfallCount": 38,
+  "priorityCoverage": {
+    "homepage": true,
+    "search": false,
+    "accessibility": true,
+    "topTask": false,
+    "contact": false,
+    "about": false,
+    "help": false,
+    "resources": false
+  },
+  "languageDistribution": {
+    "primary": 62,
+    "additional": 0
+  },
+  "totalDiscoveredPages": 62,
+  "discoverySummary": {
+    "requestId": "cache-1772721540355-9263",
+    "sourcesAttempted": [
+      "sitemap",
+      "homepage-fallback",
+      "crawl"
+    ],
+    "fallbackUsed": true,
+    "fallbackTriggerReasons": [
+      "shortfall-or-priority-gap"
+    ],
+    "cacheHit": false,
+    "cacheCleared": false,
+    "warnings": [
+      "Homepage fallback found 0 links from https://web.aaatraq.com/",
+      "Crawling found no additional URLs after checking 1 pages"
+    ],
+    "sourceCounts": {
+      "raw": {
+        "sitemap": 62,
+        "homepage-fallback": 0,
+        "crawl": 0
+      },
+      "accepted": {
+        "sitemap": 62
+      }
+    },
+    "priorityCoverage": {
+      "homepage": true,
+      "search": false,
+      "accessibility": true,
+      "topTask": false,
+      "contact": false,
+      "about": false,
+      "help": false,
+      "resources": false
+    },
+    "scoreDiagnostics": {}
+  },
+  "generatedAt": "2026-03-05T14:39:01.958Z",
+  "generatedBy": "github-action-cache"
+}
