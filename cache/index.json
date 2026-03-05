@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-05T13:55:16.303Z",
+  "generatedAt": "2026-03-05T13:55:26.909Z",
   "targets": [
     {
-      "fileName": "vaccines.gov-100.json",
-      "canonicalHost": "vaccines.gov",
+      "fileName": "webfirst.com-100.json",
+      "canonicalHost": "webfirst.com",
       "requestedCount": 100,
-      "returnedCount": 2,
-      "generatedAt": "2026-03-05T13:55:16.302Z",
+      "returnedCount": 29,
+      "generatedAt": "2026-03-05T13:55:26.908Z",
       "warnings": [
         "No sitemap found at common locations or robots.txt",
-        "Crawling discovered 1 additional URLs (crawled 1 pages)"
+        "Crawling found no additional URLs after checking 1 pages"
       ]
     }
   ]
