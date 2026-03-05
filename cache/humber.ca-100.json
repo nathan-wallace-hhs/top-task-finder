@@ -1,0 +1,106 @@
+{
+  "requestId": "cache-1772717227249-19426",
+  "selectedUrls": [
+    "https://humber.ca/",
+    "https://humber.ca/search/full-time-international-programs.html",
+    "https://humber.ca/search/full-time-international-programs.html?onlyPGWP=true",
+    "https://humber.ca/search/full-time.html",
+    "https://humber.ca/search/full-time.html?term=Summer%202026%20(May%20-%20Aug)",
+    "https://humber.ca/search/full-time/career-areas.html",
+    "https://humber.ca/search/full-time/career-areas/new-and-trending.html",
+    "https://humber.ca/study-at-humber/apply",
+    "https://humber.ca/study-at-humber/pay-fees",
+    "https://humber.ca/study-at-humber/register",
+    "https://humber.ca/study-at-humber/apply/admissions-road-map%20",
+    "https://humber.ca/study-at-humber/contact",
+    "https://humber.ca/about/builders-of-brilliance.html",
+    "https://humber.ca/about/why-polytechnic.html",
+    "https://humber.ca/about/innovation/strategic-partnership-hub",
+    "https://humber.ca/advancementandalumni/",
+    "https://humber.ca/builders-of-brilliance.html",
+    "https://humber.ca/community-resources.html",
+    "https://humber.ca/current-students.html",
+    "https://humber.ca/faculty-staff.html",
+    "https://humber.ca/future-students.html",
+    "https://humber.ca/international",
+    "https://humber.ca/professionallearning/",
+    "https://humber.ca/realestateeducation/",
+    "https://humber.ca/study-at-humber",
+    "https://humber.ca/today",
+    "https://humber.ca/advancementandalumni/unlimited.html",
+    "https://humber.ca/future-students/summer-start-contest.html",
+    "https://humber.ca/future-students/tours-events.html",
+    "https://humber.ca/future-students/win.html",
+    "https://humber.ca/future-students/you.html",
+    "https://humber.ca/professionallearning/continuous-professional-learning",
+    "https://humber.ca/study-at-humber/attend",
+    "https://humber.ca/future-students/advice/program-advice.html",
+    "https://humber.ca/future-students/guide-to-humber/indigenous-students.html",
+    "https://humber.ca/future-students/tours-events/open-house.html",
+    "https://humber.ca/today/media-releases/new-humber-polytechnic-campaign-unleashes-students-inner-you",
+    "https://humber.ca/today/news/alumna-follows-her-passion-empower-black-children-and-youth-foster-care",
+    "https://humber.ca/today/news/building-belonging-guelph-humber-alum-kimberly-daniels-shares-journey-media-program-edib-policy",
+    "https://humber.ca/today/news/empowering-voices-while-building-community-international-women-s-day",
+    "https://humber.ca/today/news/golden-run-humber-hawks"
+  ],
+  "requestedCount": 100,
+  "returnedCount": 41,
+  "randomShareCount": 0,
+  "shortfallCount": 59,
+  "priorityCoverage": {
+    "homepage": true,
+    "search": true,
+    "accessibility": false,
+    "topTask": true,
+    "contact": true,
+    "about": true,
+    "help": false,
+    "resources": false
+  },
+  "languageDistribution": {
+    "primary": 41,
+    "additional": 0
+  },
+  "totalDiscoveredPages": 41,
+  "discoverySummary": {
+    "requestId": "cache-1772717227249-19426",
+    "sourcesAttempted": [
+      "sitemap",
+      "homepage-fallback",
+      "crawl"
+    ],
+    "fallbackUsed": true,
+    "fallbackTriggerReasons": [
+      "shortfall-or-priority-gap"
+    ],
+    "cacheHit": false,
+    "cacheCleared": false,
+    "warnings": [
+      "No sitemap found at common locations or robots.txt",
+      "Crawling discovered 3 additional URLs (crawled 1 pages)"
+    ],
+    "sourceCounts": {
+      "raw": {
+        "sitemap": 0,
+        "homepage-fallback": 58,
+        "crawl": 3
+      },
+      "accepted": {
+        "homepage-fallback": 41
+      }
+    },
+    "priorityCoverage": {
+      "homepage": true,
+      "search": true,
+      "accessibility": false,
+      "topTask": true,
+      "contact": true,
+      "about": true,
+      "help": false,
+      "resources": false
+    },
+    "scoreDiagnostics": {}
+  },
+  "generatedAt": "2026-03-05T13:27:08.392Z",
+  "generatedBy": "github-action-cache"
+}
