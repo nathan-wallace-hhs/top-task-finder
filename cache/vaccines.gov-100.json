@@ -1,5 +1,5 @@
 {
-  "requestId": "cache-1772718149462-2288",
+  "requestId": "cache-1772718913893-16529",
   "selectedUrls": [
     "https://vaccines.gov/",
     "https://vaccines.gov/en"
@@ -24,7 +24,7 @@
   },
   "totalDiscoveredPages": 2,
   "discoverySummary": {
-    "requestId": "cache-1772718149462-2288",
+    "requestId": "cache-1772718913893-16529",
     "sourcesAttempted": [
       "sitemap",
       "homepage-fallback",
@@ -63,6 +63,6 @@
     },
     "scoreDiagnostics": {}
   },
-  "generatedAt": "2026-03-05T13:42:31.105Z",
+  "generatedAt": "2026-03-05T13:55:16.302Z",
   "generatedBy": "github-action-cache"
 }

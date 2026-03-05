@@ -1,13 +1,16 @@
 {
-  "generatedAt": "2026-03-05T13:46:34.299Z",
+  "generatedAt": "2026-03-05T13:55:16.303Z",
   "targets": [
     {
-      "fileName": "miro.com-100.json",
-      "canonicalHost": "miro.com",
+      "fileName": "vaccines.gov-100.json",
+      "canonicalHost": "vaccines.gov",
       "requestedCount": 100,
-      "returnedCount": 100,
-      "generatedAt": "2026-03-05T13:46:34.295Z",
-      "warnings": []
+      "returnedCount": 2,
+      "generatedAt": "2026-03-05T13:55:16.302Z",
+      "warnings": [
+        "No sitemap found at common locations or robots.txt",
+        "Crawling discovered 1 additional URLs (crawled 1 pages)"
+      ]
     }
   ]
 }
