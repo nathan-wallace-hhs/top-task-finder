@@ -1,18 +1,13 @@
 {
-  "generatedAt": "2026-03-05T16:11:59.024Z",
+  "generatedAt": "2026-03-05T18:04:08.536Z",
   "targets": [
     {
-      "fileName": "chewy.com-100.json",
-      "canonicalHost": "chewy.com",
+      "fileName": "elsevier.com-100.json",
+      "canonicalHost": "elsevier.com",
       "requestedCount": 100,
-      "returnedCount": 1,
-      "generatedAt": "2026-03-05T16:11:59.022Z",
-      "warnings": [
-        "Sitemap traversal limit reached; skipped additional sitemap files.",
-        "Homepage fallback unavailable: HTTP 429 Too Many Requests",
-        "Failed to crawl https://chewy.com/: HTTP 429 Too Many Requests",
-        "Crawling found no additional URLs after checking 0 pages"
-      ]
+      "returnedCount": 100,
+      "generatedAt": "2026-03-05T18:04:08.534Z",
+      "warnings": []
     }
   ]
 }
