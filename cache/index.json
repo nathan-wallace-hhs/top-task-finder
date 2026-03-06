@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-06T07:18:31.150Z",
+  "generatedAt": "2026-03-06T13:18:06.024Z",
   "targets": [
     {
-      "fileName": "valleyrelocation.com-100.json",
-      "canonicalHost": "valleyrelocation.com",
+      "fileName": "alumni.du.edu-100.json",
+      "canonicalHost": "alumni.du.edu",
       "requestedCount": 100,
       "returnedCount": 100,
-      "generatedAt": "2026-03-06T07:18:31.148Z",
+      "generatedAt": "2026-03-06T13:18:06.022Z",
       "warnings": []
     }
   ]
