@@ -1,13 +1,17 @@
 {
-  "generatedAt": "2026-03-07T07:21:36.255Z",
+  "generatedAt": "2026-03-08T13:10:59.973Z",
   "targets": [
     {
-      "fileName": "mark.ie-100.json",
-      "canonicalHost": "mark.ie",
+      "fileName": "webyes.com-100.json",
+      "canonicalHost": "webyes.com",
       "requestedCount": 100,
-      "returnedCount": 100,
-      "generatedAt": "2026-03-07T07:21:36.254Z",
-      "warnings": []
+      "returnedCount": 1,
+      "generatedAt": "2026-03-08T13:10:59.971Z",
+      "warnings": [
+        "No sitemap found at common locations or robots.txt",
+        "Homepage fallback found 0 links from https://webyes.com/",
+        "Crawling found no additional URLs after checking 1 pages"
+      ]
     }
   ]
 }
