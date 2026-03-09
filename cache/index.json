@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-03-09T15:11:55.862Z",
+  "generatedAt": "2026-03-09T16:25:51.024Z",
   "targets": [
     {
-      "fileName": "iog.ca-100.json",
-      "canonicalHost": "iog.ca",
+      "fileName": "blackflysolutions.ca-100.json",
+      "canonicalHost": "blackflysolutions.ca",
       "requestedCount": 100,
-      "returnedCount": 100,
-      "generatedAt": "2026-03-09T15:11:55.861Z",
-      "warnings": []
+      "returnedCount": 97,
+      "generatedAt": "2026-03-09T16:25:51.022Z",
+      "warnings": [
+        "Crawling discovered 3 additional URLs (crawled 1 pages)"
+      ]
     }
   ]
 }
