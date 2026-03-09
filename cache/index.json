@@ -1,14 +1,15 @@
 {
-  "generatedAt": "2026-03-09T17:26:16.370Z",
+  "generatedAt": "2026-03-09T17:27:35.202Z",
   "targets": [
     {
-      "fileName": "bundeswirtschaftsministerium.de-100.json",
-      "canonicalHost": "bundeswirtschaftsministerium.de",
+      "fileName": "bayern.de-100.json",
+      "canonicalHost": "bayern.de",
       "requestedCount": 100,
-      "returnedCount": 100,
-      "generatedAt": "2026-03-09T17:26:16.369Z",
+      "returnedCount": 84,
+      "generatedAt": "2026-03-09T17:27:35.200Z",
       "warnings": [
-        "No sitemap found at common locations or robots.txt"
+        "Sitemap traversal limit reached; skipped additional sitemap files.",
+        "Crawling discovered 16 additional URLs (crawled 1 pages)"
       ]
     }
   ]
