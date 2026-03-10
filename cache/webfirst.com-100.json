@@ -1,0 +1,94 @@
+{
+  "requestId": "cache-1772718926406-30567",
+  "selectedUrls": [
+    "https://webfirst.com/",
+    "https://webfirst.com/accessibility-statement",
+    "https://webfirst.com/contact",
+    "https://webfirst.com/contract-vehicles/general-services-administration-8-a-stars-iii",
+    "https://webfirst.com/contract-vehicles/general-services-administration-multiple-award-schedule",
+    "https://webfirst.com/contract-vehicles/gsa-one-acquisition-solution-for-integrated-services-plus",
+    "https://webfirst.com/projects/united-states-department-of-health-and-human-services-hhs-gov",
+    "https://webfirst.com/blog",
+    "https://webfirst.com/careers",
+    "https://webfirst.com/company",
+    "https://webfirst.com/privacy-statement",
+    "https://webfirst.com/projects",
+    "https://webfirst.com/terms-of-use",
+    "https://webfirst.com/vehicles",
+    "https://webfirst.com/webinar",
+    "https://webfirst.com/what-we-do",
+    "https://webfirst.com/projects/department-of-labor-s-ebsa",
+    "https://webfirst.com/projects/nci-center-for-cancer-research",
+    "https://webfirst.com/projects/the-department-of-the-interior",
+    "https://webfirst.com/projects/the-social-security-advisory-board-ssab",
+    "https://webfirst.com/projects/the-u-s-federal-labor-relations-authority",
+    "https://webfirst.com/projects/usda-child-nutrition-program",
+    "https://webfirst.com/projects/usda-rural-development",
+    "https://webfirst.com/what-we-do/artificial-intelligence-machine-learning",
+    "https://webfirst.com/what-we-do/content-management-systems",
+    "https://webfirst.com/what-we-do/cx-ui-ux-web-design",
+    "https://webfirst.com/what-we-do/data-visualization",
+    "https://webfirst.com/what-we-do/devsecops",
+    "https://webfirst.com/what-we-do/mobile-app-development"
+  ],
+  "requestedCount": 100,
+  "returnedCount": 29,
+  "randomShareCount": 0,
+  "shortfallCount": 71,
+  "priorityCoverage": {
+    "homepage": true,
+    "search": false,
+    "accessibility": true,
+    "topTask": true,
+    "contact": true,
+    "about": false,
+    "help": false,
+    "resources": false
+  },
+  "languageDistribution": {
+    "primary": 29,
+    "additional": 0
+  },
+  "totalDiscoveredPages": 29,
+  "discoverySummary": {
+    "requestId": "cache-1772718926406-30567",
+    "sourcesAttempted": [
+      "sitemap",
+      "homepage-fallback",
+      "crawl"
+    ],
+    "fallbackUsed": true,
+    "fallbackTriggerReasons": [
+      "shortfall-or-priority-gap"
+    ],
+    "cacheHit": false,
+    "cacheCleared": false,
+    "warnings": [
+      "No sitemap found at common locations or robots.txt",
+      "Crawling found no additional URLs after checking 1 pages"
+    ],
+    "sourceCounts": {
+      "raw": {
+        "sitemap": 0,
+        "homepage-fallback": 60,
+        "crawl": 0
+      },
+      "accepted": {
+        "homepage-fallback": 29
+      }
+    },
+    "priorityCoverage": {
+      "homepage": true,
+      "search": false,
+      "accessibility": true,
+      "topTask": true,
+      "contact": true,
+      "about": false,
+      "help": false,
+      "resources": false
+    },
+    "scoreDiagnostics": {}
+  },
+  "generatedAt": "2026-03-05T13:55:26.908Z",
+  "generatedBy": "github-action-cache"
+}
